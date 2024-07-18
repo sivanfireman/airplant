@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang=" ">
+<head>
+    <meta charset="utf-8" />
+    <title>צור קשר</title>
+    <link rel="icon" href="images/icon.png" type="image/svg">
+    <meta name="description" content="צור קשר" />
+    <meta name="keywords" content="שם, דואר אלקטרוני, נייד, מין, אזור מגורים, סיבת פניה " />
+    <meta name="author" content="שיר דרור, נועה בר שדה סיון פיירמן" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+
+    <link href="styles/reset.css" rel="stylesheet" />
+    <link href="styles/myStyle.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- JS -->
+    <script src="jScripts/jquery-1.12.0.min.js"></script>
+
+
+</head>
+<body>
+
+    <header>
+        <div class="nav" aria-label="תפריט ניווט ראשי">
+
+            <img src="images/סופי.png" class="image-logo" alt="לוגו האתר" />
+            <a href="whatIsThis.html">מה הם צמחי אוויר</a>
+            <a href="rightCaring.html">טיפול נכון</a>
+            <a href="#">סוגים</a>
+            <a href="#">משתלות</a>
+        </div>
+    </header>
+    <div id="container">
+        <main>
+            <div class="image-container-right">
+                <img src="images/contact.jpg" alt="Description of image">
+            </div>
+            <div class="bred">
+                <br />
+                <br />
+                <br />
+                <a href="index.html">לעמוד הבית></a>
+            </div>
+            <div class="contact-container">
+                <div class="text-content">
+
+                    <h2>צור קשר</h2>
+                    <p>
+                        נשמח לעזור לכם להתפתח!<br>
+                        למה שלא תשאירו פרטים בטופס למטה?<br>
+                        למלא כתובת מייל, נייד והמסר שברצונכם שנקבל?<br>
+                        אנחנו פה בשבילכם!
+                    </p>
+                    <form>
+                        <label for="name">*שם מלא:</label><br>
+                        <input type="text" id="name" name="name" required><br><br>
+                        <label for="email">*דוא"ל אלקטרוני:</label><br>
+                        <input type="email" id="email" name="email" required><br><br>
+                        <label for="phone">*נייד:</label><br>
+                        <input type="tel" id="phone" name="phone" required><br><br>
+                        *מין:
+                        <label>
+                            <input type="radio" name="gender" value="male">
+                            זכר
+                        </label>
+                        <label>
+                            <input type="radio" name="gender" value="female">
+                            נקבה
+                        </label> <br /><br />
+                        <label for="options">אזור מגורים:</label>
+                        <select id="options" name="options">
+                            <option value="option1"></option>
+                            <option value="option1">צפון</option>
+                            <option value="option2">שרון</option>
+                            <option value="option3">מרכז</option>
+                            <option value="option3">דרום</option>
+                        </select><br /><br />
+                        <label for="message">סיבת הפניה:</label><br>
+                        <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
+                        <label>
+                            <input type="checkbox" name="option" value="option1">
+                            אישור קבלת דיוור
+                        </label><br />
+                        <label>
+                            <input type="checkbox" name="option" value="option2">
+                            אישור התנאים של האתר
+                        </label>
+                        <br /><br />
+
+
+                        <input type="submit" value="שלח">
+                    </form>
+                </div>
+
+            </div>
+        </main>
+
+        <div class="footer" aria-label="תפריט ניווט תחתון">
+
+            <p>
+                <a href="contactUs.html">צור קשר</a>
+                <a href="siteMap.html">מפת האתר</a>
+                <a href="about.html">אודות</a>
+            </p>
+
+
+        </div>
+    </div>
+</body>
+</html>

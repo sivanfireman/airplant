@@ -1,0 +1,359 @@
+﻿/* הגדרות כלליות: הגדרת הגובה, המרווחים, והעיצוב הכללי של גוף הדף */
+html, body {
+    height: 100%; /* גובה של 100% כדי למנוע גלילה אנכית מיותרת */
+    margin: 0; /* ביטול מרווחים ברירת מחדל */
+}
+
+body {
+    direction: rtl; /* כיוון ימין לשמאל */
+    margin: 0; /* ביטול מרווחים נוספים */
+    padding: 0; /* ביטול ריפוד */
+    background-color: #f3f3f3; /* צבע רקע כללי של הדף */
+    display: flex; /* שימוש ב-Flexbox לסידור התוכן */
+    flex-direction: column; /* סידור התוכן בעמודה */
+    background-position: center; /* מיקום הרקע במרכז */
+    background-size: cover; /* כיסוי הרקע בכל שטח האלמנט */
+}
+
+/* כותרת עליונה: עיצוב הכותרת הקבועה בראש הדף */
+header {
+    width: 100%; /* כותרת עליונה עם רוחב מלא */
+    background-color: white; /* צבע רקע של הכותרת */
+    text-align: center; /* יישור הטקסט במרכז */
+    padding: 20px 0; /* ריפוד מעל ומתחת לטקסט */
+    position: fixed; /* מיקום קבוע במיקום העליון */
+    z-index: 3; /* סידור סדר השכבות של האלמנט */
+}
+
+/* ניווט: עיצוב תפריט הניווט העליון */
+.nav {
+    padding: 10px; /* ריפוד פנימי של התפריט */
+    text-align: center; /* יישור הטקסט במרכז */
+    position: fixed; /* מיקום קבוע במיקום העליון */
+    top: 0; /* מיקום התפריט למעלה */
+    width: 100%; /* רוחב מלא של התפריט */
+    background-color: white; /* צבע רקע של התפריט */
+    padding: 20px; /* ריפוד פנימי של התפריט */
+    z-index: 2; /* סדר השכבות של התפריט */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* הצללה קלה */
+    height: 40px; /* גובה התפריט */
+    display: flex; /* שימוש ב-Flexbox */
+    justify-content: center; /* יישור התפריטים במרכז */
+    align-items: center; /* יישור התפריטים במרכז אנכית */
+}
+
+    .nav a {
+        color: black; /* צבע הטקסט של הקישורים */
+        margin: 0 15px; /* מרווחים בין הקישורים */
+        text-decoration: none; /* ביטול קו התחתון בקישורים */
+        font-family: 'Rubik', sans-serif; /* פונטים */
+        font-size: 26px; /* גודל הטקסט */
+        font-weight: bold; /* עובי הטקסט */
+        position: relative; /* מיקום יחסית */
+        display: inline-block; /* הצגת הקישור כמו בלוק אך בקו אחד */
+    }
+
+        .nav a::after {
+            content: ''; /* תוכן של pseudo-element, ריק */
+            display: block; /* הצגת pseudo-element כחלק מהבלוק */
+            width: 0; /* רוחב התוסף הראשוני */
+            height: 2px; /* גובה התוסף */
+            background: black; /* צבע התוסף */
+            position: absolute; /* מיקום מוחלט */
+            bottom: -5px; /* מיקום התוסף מתחת לטקסט */
+            left: 0; /* יישור התוסף לשמאל */
+            transition: width 0.3s; /* אנימציה לשינוי הרוחב */
+        }
+
+        .nav a:hover::after {
+            width: 100%; /* שינוי רוחב התוסף בעת ריחוף */
+        }
+
+/* דף הבית: עיצוב הקונטיינר של התמונה הראשית */
+.image-container {
+    position: relative; /* מיקום יחסית */
+    text-align: center; /* יישור הטקסט במרכז */
+    color: white; /* צבע הטקסט */
+    flex: 1; /* מתיחה של הקונטיינר */
+    height: 100vh; /* גובה מלא של התצוגה */
+    overflow: hidden; /* הסתרת התוכן החורג */
+}
+
+    .image-container img {
+        width: 100%; /* רוחב התמונה מותאם לרוחב הקונטיינר */
+        height: 100%; /* גובה התמונה מותאם לגובה הקונטיינר */
+        object-fit: cover; /* התמונה מכסה את הקונטיינר בצורה נכונה */
+    }
+
+/* עמודי תוכן: עיצוב כותרת התוכן */
+.pagetitel h1 {
+    position: absolute; /* מיקום מוחלט */
+    top: 50%; /* מיקום בגובה המרכזי */
+    left: 50%; /* מיקום לרוחב המרכזי */
+    font-size: 36px; /* גודל הטקסט */
+    font-weight: 600; /* עובי הטקסט */
+    transform: translate(-50%, -50%); /* מיקום מחדש למרכז */
+    padding: 1em; /* ריפוד סביב הטקסט */
+    color: white; /* צבע הטקסט */
+}
+
+/* עיצוב קונטיינר של תמונה קטנה */
+.image-container-small {
+    position: relative; /* מיקום יחסית */
+    text-align: center; /* יישור הטקסט במרכז */
+    color: white; /* צבע הטקסט */
+    flex: 1; /* מתיחה של הקונטיינר */
+    height: 300px; /* גובה קבוע */
+    overflow: hidden; /* הסתרת התוכן החורג */
+    margin: 0; /* ביטול מרווחים */
+    padding: 0; /* ביטול ריפוד */
+}
+
+    .image-container-small img {
+        width: 100%; /* רוחב התמונה מותאם לרוחב הקונטיינר */
+        height: 100%; /* גובה התמונה מותאם לגובה הקונטיינר */
+    }
+
+/* תמונה בצד ימין בצור קשר */
+.image-container-right {
+    float: right; /* הצגת התמונה בצד ימין */
+    margin-left: 10px; /* מרווח שמאלי מהתמונה */
+    position: relative; /* מיקום יחסית */
+    color: white; /* צבע הטקסט */
+    flex: 1; /* מתיחה של הקונטיינר */
+    height: 100vh; /* גובה מלא של התצוגה */
+    overflow: hidden; /* הסתרת התוכן החורג */
+}
+
+    .image-container-right img {
+        width: 100%; /* רוחב התמונה מותאם לרוחב הקונטיינר */
+        height: 100%; /* גובה התמונה מותאם לגובה הקונטיינר */
+        object-fit: cover; /* התמונה מכסה את הקונטיינר בצורה נכונה */
+    }
+
+/* אזור גיבור: עיצוב התוכן המרכזי */
+.hero {
+    position: absolute; /* מיקום מוחלט */
+    top: 50%; /* מיקום בגובה המרכזי */
+    left: 50%; /* מיקום לרוחב המרכזי */
+    transform: translate(-50%, -50%); /* מיקום מחדש למרכז */
+    background-size: cover; /* גודל הרקע מכסה את כל האזור */
+    text-align: center; /* יישור הטקסט במרכז */
+    background-position: center; /* מיקום הרקע במרכז */
+    padding: 1em; /* ריפוד סביב התוכן */
+}
+
+    .hero h1 {
+        font-size: 2.5em; /* גודל הטקסט */
+        margin: 0.5em 0; /* מרווחים סביב הטקסט */
+        color: white; /* צבע הטקסט */
+    }
+
+    .hero h2 {
+        font-size: 2em; /* גודל הטקסט */
+        margin: 0.5em 0; /* מרווחים סביב הטקסט */
+        color: white; /* צבע הטקסט */
+    }
+
+/* הדגשה של טקסט */
+.highlight {
+    color: #9acd01; /* צבע הדגשה */
+}
+
+/* עיצוב כפתורים */
+.buttons {
+    display: flex; /* שימוש ב-Flexbox */
+    justify-content: center; /* יישור כפתורים במרכז */
+    flex-wrap: wrap; /* פריסת הכפתורים בשורות */
+    margin-top: 2em; /* מרווח עליון */
+}
+
+.button {
+    background-color: rgba(255, 255, 255, 0.7); /* צבע רקע שקוף של הכפתור */
+    color: #333; /* צבע הטקסט של הכפתור */
+    padding: 1em 2em; /* ריפוד פנימי של הכפתור */
+    margin: 0.5em; /* מרווחים סביב הכפתור */
+    text-decoration: none; /* ביטול קו התחתון */
+    border-radius: 5px; /* קצוות מעוגלים */
+    transition: background-color 0.3s; /* אנימציה לצבע הרקע */
+    color: black; /* צבע טקסט של הכפתור */
+}
+
+    .button:hover {
+        background-color: rgba(255, 255, 255, 0.9); /* שינוי צבע הרקע בעת ריחוף */
+    }
+
+/* עיצוב תוכן עיקרי */
+main {
+    flex: 1; /* מתיחה של התוכן */
+}
+
+/* עיצוב כותרת תחתונה */
+.footer {
+    background-color: #B2C696; /* צבע הרקע של כותרת התחתונה */
+    text-align: right; /* יישור הטקסט לימין */
+    padding: 20px; /* ריפוד פנימי */
+    position: fixed; /* מיקום קבוע בתחתית הדף */
+    bottom: 0; /* מיקום בתחתית */
+    width: 100%; /* רוחב מלא */
+}
+
+    .footer p {
+        margin: 0; /* ביטול מרווחים סביב הפסקה */
+    }
+
+    .footer a {
+        color: black; /* צבע הטקסט של הקישורים בכותרת התחתונה */
+        margin-left: 15px; /* מרווח שמאלי בין הקישורים */
+        text-decoration: none; /* ביטול קו התחתון */
+        font-weight: bold; /* עובי הטקסט */
+        color: black; /* צבע הטקסט של הקישורים */
+    }
+
+/* עיצוב אלמנט Breadcrumb */
+.bred {
+    padding: 30px; /* ריפוד פנימי */
+    margin-left: 15px; /* מרווח שמאלי */
+    top: 60px; /* מיקום מלמעלה */
+}
+
+/* עיצוב תוכן */
+.content {
+    background-color: white; /* צבע רקע של התוכן */
+    margin: 80px auto 20px; /* מרווחים סביב התוכן */
+    padding: 20px; /* ריפוד פנימי */
+    max-width: 1200px; /* רוחב מקסימלי של התוכן */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* הצללה קלה */
+    width: auto; /* רוחב אוטומטי */
+    height: auto; /* גובה אוטומטי */
+}
+
+    .content h2 {
+        font-size: 32px; /* גודל כותרת משנית */
+        text-align: center; /* יישור הכותרת במרכז */
+    }
+
+    .content h3 {
+        font-size: 26px; /* גודל כותרת שלישית */
+        text-align: center; /* יישור הכותרת במרכז */
+        margin-bottom: 100px; /* מרווח תחתון */
+    }
+
+    .content p {
+        line-height: 1.6; /* גובה שורה של הטקסט */
+        font-size: 26px; /* גודל הטקסט */
+        margin-bottom: 50px; /* מרווח תחתון */
+    }
+
+    .content ul {
+        list-style-type: disc; /* סוג הרשימה: בולטים */
+        padding-left: 30px; /* ריפוד שמאלי של הרשימה */
+        font-size: 30px; /* גודל הטקסט של הרשימה */
+    }
+
+    .content li {
+        margin: 10px 0; /* מרווחים בין פריטי הרשימה */
+    }
+
+/* עיצוב טיפוגרפיה */
+.gveret-levin {
+    font-family: 'Gveret Levin AlefAlefAlef', cursive; /* משפחת פונטים */
+    font-size: 32px; /* גודל הטקסט */
+}
+
+/* עיצוב עמודות תוכן */
+.column {
+    flex: 1; /* מתיחה של העמודה */
+    margin: 20px; /* מרווחים סביב העמודה */
+    font-family: 'Rubik', sans-serif; /* פונטים */
+    font-weight: 700; /* עובי הטקסט */
+}
+
+    .column a {
+        color: black; /* צבע הטקסט של הקישורים בעמודה */
+        text-decoration: none; /* ביטול קו התחתון */
+    }
+
+/* עיצוב כותרת משנית */
+h4 {
+    font-family: 'Gveret Levin AlefAlefAlef', cursive; /* משפחת פונטים */
+    font-size: 24px; /* גודל הטקסט */
+    font-weight: bold; /* עובי הטקסט */
+    margin-bottom: 20px; /* מרווח תחתון */
+}
+
+/* עיצוב רשימות */
+ul {
+    list-style: none; /* ביטול הבולטים ברשימה */
+    padding: 0; /* ביטול ריפוד */
+    list-style-type: disc; /* סוג הרשימה: בולטים */
+}
+
+li {
+    margin-bottom: 10px; /* מרווח תחתון בין פריטי הרשימה */
+}
+
+/* עיצוב כותרת זוטרה */
+h6 {
+    text-align: center; /* יישור הכותרת במרכז */
+    font-size: 24px; /* גודל הטקסט */
+    font-weight: 300; /* עובי הטקסט */
+}
+
+/* עיצוב קונטיינר תוכן מפה */
+.contentMap {
+    display: flex; /* שימוש ב-Flexbox */
+    justify-content: space-between; /* חלוקת רווחים בין פריטים */
+    align-items: flex-start; /* יישור הפריטים מלמעלה */
+    width: 100%; /* רוחב מלא */
+    max-width: 1440px; /* רוחב מקסימלי */
+    margin: auto; /* מיקום אוטומטי במרכז */
+    padding: 50px 0; /* ריפוד עליון ותחתון */
+    box-sizing: border-box; /* חישוב גבולות ו-padding */
+}
+
+/* עיצוב מרכזי */
+.hit {
+    text-align: center; /* יישור התוכן במרכז */
+}
+
+/* עיצוב תמונות */
+.ourPhoto {
+    text-align: center; /* יישור התמונות במרכז */
+}
+
+    .ourPhoto img {
+        width: 200px; /* רוחב התמונה */
+        height: 200px; /* גובה התמונה */
+    }
+
+    .ourPhoto figure {
+        display: inline-block; /* הצגת התמונה בצורה בלוקית על אותה שורה */
+        margin: 0 10px; /* מרווחים בצדדים */
+    }
+
+    .ourPhoto figcaption {
+        text-align: center; /* יישור הכיתוב במרכז */
+        margin-top: 5px; /* מרווח עליון */
+        font-size: 24px; /* גודל הטקסט */
+    }
+
+/* דפים שפותחו באתר באודות */
+.prodacts ol {
+    font-size: 24px; /* גודל הטקסט */
+    color: black; /* צבע הטקסט */
+}
+
+.prodacts ul {
+    font-size: 24px; /* גודל הטקסט */
+    color: black; /* צבע הטקסט */
+    margin-right: 20px; /* מרווח ימני */
+}
+
+/* עיצוב לוגו תמונה */
+.image-logo {
+    height: 60px; /* גובה התמונה */
+    position: absolute; /* מיקום מוחלט */
+    top: 10px; /* מיקום מלמעלה */
+    right: 10px; /* מיקום מימין */
+}
